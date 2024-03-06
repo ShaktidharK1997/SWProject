@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 1
 
 # Application definition
 
@@ -42,6 +43,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    # Login page
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google', 
 ]
 
 REST_FRAMEWORK = {
@@ -59,6 +66,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'allauth.account.middleware.AccountMiddleware', 
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'IntelliQuest.urls'
@@ -91,11 +101,11 @@ WSGI_APPLICATION = 'IntelliQuest.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', 'IntelliQuest_DB'),
-        'USER': os.getenv('DB_USER','postgres'),
-        'PASSWORD': os.getenv('DB_PASSWORD','Shaktidhar!1997'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
+        'NAME': 'SWE_DB',
+        'USER': 'changyuyuan',
+        'PASSWORD': 'lawani321',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
 

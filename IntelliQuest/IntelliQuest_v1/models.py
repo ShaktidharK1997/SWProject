@@ -10,7 +10,7 @@ class Author(models.Model):
 
 
 class Paper(models.Model):
-    paperID = models.CharField(primary_key= True)
+    paperID = models.CharField(primary_key= True, max_length = 100)
     year = models.IntegerField(null=True)
     authors = models.ManyToManyField(Author, related_name = 'papers')
     title = models.CharField(max_length = 512)
