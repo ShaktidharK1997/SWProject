@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import './SearchPage.css';
 
@@ -31,7 +32,7 @@ function SearchPage() {
         <a href="{% url 'home' %}" class="logo">IntelliQuest</a>
       </div>
       <div className="header-right">
-        <button onClick={() => window.location='#signin'}>Sign In</button>
+      <Link to="/login" className="signInButton">Sign In</Link>
         <button onClick={() => window.location='#settings'}>Settings</button>
       </div>
 
