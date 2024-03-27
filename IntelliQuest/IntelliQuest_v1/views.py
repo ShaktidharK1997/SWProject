@@ -18,6 +18,21 @@ from rest_framework.response import Response
 from django.contrib.auth import authenticate, login
 
 
+#Shivaji import 
+
+from django.shortcuts import render
+from rest_framework import viewsets
+from .models import PersonalInfo, Education
+from .serializers import PersonalInfoSerializer, EducationSerializer
+from django.shortcuts import get_object_or_404
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.decorators import api_view, parser_classes
+from rest_framework.parsers import MultiPartParser, FormParser
+from django.contrib.auth.models import User
+from rest_framework.views import APIView
+
+
 
 SEMANTIC_SCHOLAR_API_KEY = '8kxH5DVIYTaE4X2naV3l83RYdf0bYxg7DSFdd7U3'
 
